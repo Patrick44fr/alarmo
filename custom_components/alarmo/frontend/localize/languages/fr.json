@@ -136,7 +136,7 @@
         }
       }
     },
-    "capteurs": {
+    "sensors": {
       "cards": {
         "sensors": {
           "title": "Capteurs",
