@@ -25,6 +25,7 @@
       "yaml_mode": "Afficher l'éditeur de code"
     }
   },
+  "title": "Gestion de l'alarme",
   "panels": {
     "general": {
       "cards": {
@@ -109,6 +110,8 @@
           "table": {
             "remarks": "Remarque",
             "summary": "Cette zone contient des {sensors} capteurs et {automations} automatisations."
+             "summary_sensors": "{number} capteurs",
+             "summary_automations": "{number} automatisations"
           },
           "actions": {
             "add": "Ajouter"
@@ -118,6 +121,9 @@
       "dialogs": {
         "create_area": {
           "title": "Nouvelle zone"
+          "fields": {
+            "copy_from": "Copier les paramètres depuis"
+          }
         },
         "edit_area": {
           "title": "Editer la zone '{area}'",
@@ -136,15 +142,19 @@
         }
       }
     },
-    "capteurs": {
+    "sensors": {
+      "title": "Capteurs",
       "cards": {
         "sensors": {
-          "title": "Capteurs",
           "description": "Capteurs actuellement configurés. Cliquez sur une entité pour apporter des modifications.",
           "no_items": "Il n'y a pas encore de capteur ajouté à l'alarme. Assurez-vous de les ajouter d'abord.",
           "table": {
             "arm_modes": "Type d'activation",
             "always_on": "(Toujours)"
+          },
+          "filter": {
+            "label": "Filtrer par zone",
+            "no_area": "(pas de zone)"
           }
         },
         "add_sensors": {
@@ -320,6 +330,7 @@
       }
     },
     "actions": {
+      "title": "Actions",
       "cards": {
         "notifications": {
           "title": "Notifications",
@@ -330,11 +341,14 @@
           },
           "actions": {
             "new_notification": "Nouvelle notification"
+          },
+          "filter": {
+            "label": "Filtrer par zone",
+            "no_area": "Alarme principale"
           }
         },
         "actions": {
-          "title": "Actions",
-          "description": "Ce panneau est encore en développement. Il sera utilisé pour changer d'état les appareils de votre choix.",
+          "description": "Ce panneau est utilisé pour changer d'état les appareils de votre choix.",
           "table": {
             "no_items": "Il n'y a aucune action de créer."
           },
@@ -352,7 +366,33 @@
             },
             "event": {
               "heading": "Evènement",
-              "description": "Détermine quand la notification doit être envoyée"
+              "description": "Détermine quand la notification doit être envoyée",
+                "choose": {
+                "armed": {
+                  "name": "Alarme activée",
+                  "description": "L'alarme est opérationnelle"
+                },
+                "disarmed": {
+                  "name": "Alarme désactivée",
+                  "description": "L'alrme est désactivée"
+                },
+                "triggered": {
+                  "name": "Alarme déclenchée",
+                  "description": "L'alarme est déclenchée"
+                },
+                "arm_failure": {
+                  "name": "Armement impossible",
+                  "description": "L'armement de l'alarme a échoué en raison d'un ou plusieurs capteurs ouverts"
+                },
+                "arming": {
+                  "name": "Délai de sortie en cours",
+                  "description": "Délai de sortie en cours, prêt à quitter la maison."
+                },
+                "pending": {
+                  "name": "Délai d'entrée en cours",
+                  "description": "Délai d'entrée en cours, l'alarme se déclenchera bientôt."
+                }
+              }
             },
             "mode": {
               "heading": "Mode",
